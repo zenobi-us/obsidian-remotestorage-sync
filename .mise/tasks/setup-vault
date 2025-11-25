@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+#MISE description="Configure Obsidian vault path (run once)"
+
+set -euo pipefail
+
+# Check if VAULT_PATH is set and valid
+if [ -n "${VAULT_PATH:-}" ] && [ -d "$VAULT_PATH/.obsidian" ]; then
+    echo "✅ Using vault path ${VAULT_PATH} from environment"
+    exit 0
+fi
+
+# Print reason for prompting
+[ -z "${VAULT_PATH:-}" ] && echo "⚠️  VAULT_PATH is not set"
+[ -n "${VAULT_PATH:-}" ] && [ ! -d "$VAULT_PATH/.obsidian" ] && echo "⚠️  VAULT_PATH is set but not a valid Obsidian vault: $VAULT_PATH"
+
+
+# VAULT_PATH missing or invalid - ask user
+echo "🔍 Obsidian vault not configured"
+echo ""
+echo "Enter the path to your Obsidian vault (the directory containing .obsidian/):"
+read -rp "Vault path: " NEW_VAULT_PATH
+
+# Validate path
+if [ ! -d "$NEW_VAULT_PATH" ]; then
+    echo "❌ Directory doesn't exist: $NEW_VAULT_PATH"
+    exit 1
+fi
+
+if [ ! -d "$NEW_VAULT_PATH/.obsidian" ]; then
+    echo "❌ Not an Obsidian vault (no .obsidian directory): $NEW_VAULT_PATH"
+    exit 1
+fi
+
+# Update or create .env file
+if [ -f ".env" ]; then
+    # Remove existing VAULT_PATH line if present
+    grep -v "^VAULT_PATH=" .env > .env.tmp && mv .env.tmp .env || true
+fi
+
+# Add new VAULT_PATH
+echo "VAULT_PATH=$NEW_VAULT_PATH" >> .env
+echo "✅ Vault path saved to .env"
+echo ""

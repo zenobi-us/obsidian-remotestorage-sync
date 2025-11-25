@@ -1,0 +1,11 @@
+{
+  "id": "{pluginId}",
+  "name": "{pluginName}",
+  "version": "0.0.1",
+  "minAppVersion": "1.10.3",
+  "description": "{description}",
+  "author": "{author}",
+  "authorUrl": "https://github.com/{author}",
+  "fundingUrl": "https://github.com/sponsors/{author}",
+  "isDesktopOnly": false
+}

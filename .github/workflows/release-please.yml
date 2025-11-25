@@ -1,0 +1,46 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: release-please-manifest.json
+          
+      # Checkout repo if release was created
+      - uses: actions/checkout@v4
+        if: ${{ steps.release.outputs.release_created }}
+        
+      # Setup mise and pnpm if release was created
+      - uses: jdx/mise-action@v2
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          experimental: true
+          
+      - name: Install dependencies
+        if: ${{ steps.release.outputs.release_created }}
+        run: pnpm install
+        
+      - name: Build plugin
+        if: ${{ steps.release.outputs.release_created }}
+        run: mise run build
+        
+      - name: Create GitHub Release
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ steps.release.outputs.tag_name }}" \
+            dist/main.js \
+            dist/manifest.json \
+            dist/styles.css \
+            --title "${{ steps.release.outputs.tag_name }}" \
+            --notes "${{ steps.release.outputs.body }}"

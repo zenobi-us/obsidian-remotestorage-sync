@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#MISE description="Symlink plugin to Obsidian vault"
+#MISE depends=["setup-vault"]
+
+set -euo pipefail
+
+[ -z "${VAULT_PATH:-}" ] && echo "❌ VAULT_PATH not set. Add it to .env first." && exit 1
+
+PLUGIN_ID=$(jq -r '.id' manifest.json)
+PLUGINS_DIR="$VAULT_PATH/.obsidian/plugins"
+PLUGIN_LINK="$PLUGINS_DIR/$PLUGIN_ID"
+PROJECT_ROOT="$(pwd)"
+
+# Create plugins directory if it doesn't exist
+mkdir -p "$PLUGINS_DIR"
+
+# Remove old symlink if it exists
+rm -f "$PLUGIN_LINK"
+
+# Symlink dist folder to vault plugins as kanban-bases-view
+ln -sf "$PROJECT_ROOT/dist" "$PLUGIN_LINK"
+
+echo "✅ Symlinked dist/ to: $PLUGIN_LINK"

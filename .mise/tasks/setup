@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#MISE description="Install dependencies with pnpm"
+
+set -euo pipefail
+
+bkt --ttl=24h --modtime=pnpm-lock.yaml -- pnpm install

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#MISE description="Start dev server with Vite (watch + HMR)"
+#MISE depends=["setup", "setup-vault"]
+
+set -euo pipefail
+
+# Bail out if VAULT_PATH not set
+[ -z "${VAULT_PATH:-}" ] && echo "❌ VAULT_PATH not set. Add it to .env first." && exit 1
+
+# Read vault path and plugin ID
+PLUGIN_ID=$(jq -r '.id' manifest.json)
+PLUGIN_PATH="$VAULT_PATH/.obsidian/plugins/${PLUGIN_ID}"
+HOTRELOAD_PATH="$PLUGIN_PATH/.hotreload"
+
+# Clean up old symlink if it exists
+OLD_SYMLINK="$VAULT_PATH/.obsidian/plugins/${PLUGIN_ID}"
+rm -f "$OLD_SYMLINK" 2>/dev/null || true
+
+echo "🚀 Starting Vite dev server..."
+echo "   Output: $PLUGIN_PATH"
+echo "   Plugin ID: $PLUGIN_ID"
+echo ""
+
+# Run Vite in dev mode with watch and trigger .hotreload on changes
+vite build --watch --mode development 2>&1 | while IFS= read -r line; do
+  echo "$line"
+  
+  # After each successful build, touch .hotreload to signal Obsidian
+  if [[ "$line" == *"built in"* ]]; then
+    touch "$HOTRELOAD_PATH" 2>/dev/null && echo "✓ Triggered Obsidian reload"
+  fi
+done
