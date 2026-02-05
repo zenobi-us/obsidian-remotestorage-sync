@@ -30,7 +30,9 @@ MVP is async-first (live editing is a stretch). Scope is limited to selected con
 - Remote relay/turn services (future phase if needed).
 
 ## Tasks
-- Pending breakdown task: [Break down MVP stories into tasks](task-95882e57-breakdown-mvp-stories.md).
+- [Implement selective vault scope configuration](task-86b9fc95-selective-scope-config.md)
+- [Implement Yjs async sync for notes and attachments](task-aaa78b68-yjs-async-sync.md)
+- [Validate async sync performance targets](task-fea2a6e7-validate-sync-performance.md)
 
 ## Notes
 - Uses Yjs as the primary CRDT (per research [P2P Browser Sync Libraries](research-a7b3c9d2-p2p-browser-sync-libraries.md)), with Loro as a fallback option if required ([Loro CRDT](research-f2e8b1a4-loro-crdt-library.md)).

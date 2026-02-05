@@ -30,7 +30,9 @@ Async-first workflow needs explicit controls and visibility to build trust, espe
 - Telemetry/analytics (future consideration).
 
 ## Tasks
-- Pending breakdown task: [Break down MVP stories into tasks](task-95882e57-breakdown-mvp-stories.md).
+- [Implement presence indicators UI](task-c280c8d8-presence-ui.md)
+- [Implement manual sync control and progress/error UX](task-fe1d6532-manual-sync-control.md)
+- [Implement conflict resolution diff UI](task-816c62f7-conflict-diff-ui.md)
 
 ## Notes
 - Ensure conflict UI integrates with CRDT merge results and provides user-overridable resolutions when necessary.

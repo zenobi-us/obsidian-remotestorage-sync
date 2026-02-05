@@ -29,7 +29,7 @@ This is a stretch goal contingent on MVP stability; it should not compromise asy
 - Relay-backed low-latency optimizations.
 
 ## Tasks
-- Pending breakdown task: [Break down MVP stories into tasks](task-95882e57-breakdown-mvp-stories.md).
+- To be defined post-MVP (stretch goal not scheduled yet).
 
 ## Notes
 - Build atop existing CRDT foundations to minimize duplication and honor selective sync constraints.

@@ -31,7 +31,9 @@ Discovery and trust are prerequisites for any data sync. This story ensures conn
 - Mobile platform support.
 
 ## Tasks
-- Pending breakdown task: [Break down MVP stories into tasks](task-95882e57-breakdown-mvp-stories.md).
+- [Implement mDNS + STUN discovery and handshake](task-6fb8a3af-discovery-handshake.md)
+- [Implement QR/passphrase key exchange and session auth](task-0fec4274-key-exchange.md)
+- [Implement peer approval workflow and gating](task-ecbd5622-peer-approval.md)
 
 ## Notes
 - Keep logging local-only for debugging per scope decisions.

@@ -2,10 +2,11 @@
 
 ## Current Status
 - **Current Epic**: P2P Obsidian Vault Collaboration (`epic-fc65689b`) – planning; scope confirmed (async-first, selected folders, mDNS+WebRTC STUN, E2E + peer approval, presence/conflict UI, manual sync)
-- **Active Phases**: None (phase planning will follow MVP task breakdown)
-- **Next Milestone**: Break down MVP stories into tasks and sequence phases
+- **Active Phases**: None (tasks defined; ready to sequence into phases)
+- **Next Milestone**: Start executing MVP tasks (selective sync, discovery/onboarding, presence/conflict UI) and formalize phase sequencing
 
 ## Recent Updates
+- 2026-02-05: Broke down MVP stories into tasks and linked them to stories (`task-86b9fc95`, `task-aaa78b68`, `task-fea2a6e7`, `task-6fb8a3af`, `task-0fec4274`, `task-ecbd5622`, `task-c280c8d8`, `task-fe1d6532`, `task-816c62f7`)
 - 2026-02-05: Captured scope decisions, updated epic, completed scope-clarification task, and drafted MVP stories (`story-193cacc9`, `story-c7850ba4`, `story-3920916f`, `story-420b4311`)
 - 2026-02-05: Started epic `epic-fc65689b` and created scope clarification task (`task-4bd7399a`)
 - 2026-02-05: Cleanup - restored deleted research files
