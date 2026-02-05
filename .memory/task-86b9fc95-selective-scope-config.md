@@ -2,8 +2,8 @@
 id: 86b9fc95
 title: Implement selective vault scope configuration
 created_at: 2026-02-05T21:15:00+10:30
-updated_at: 2026-02-05T21:15:00+10:30
-status: todo
+updated_at: 2026-02-05T23:07:49+10:30
+status: in-progress
 epic_id: fc65689b
 phase_id: none
 story_id: 193cacc9
