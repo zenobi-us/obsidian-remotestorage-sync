@@ -29,7 +29,11 @@ This is a stretch goal contingent on MVP stability; it should not compromise asy
 - Relay-backed low-latency optimizations.
 
 ## Tasks
-- TBD (to be added via task breakdown).
+- Pending breakdown task: [Break down MVP stories into tasks](task-95882e57-breakdown-mvp-stories.md).
 
 ## Notes
-- Build atop existing CRDT foundations to minimize duplication.
+- Build atop existing CRDT foundations to minimize duplication and honor selective sync constraints.
+
+## Links
+- Epic: [P2P Obsidian Vault Collaboration](epic-fc65689b-p2p-obsidian-collab.md)
+- Related stories: [Async selective sync](story-193cacc9-async-selective-sync.md), [Presence & conflict UI](story-3920916f-presence-conflicts-controls.md), [Peer discovery & secure onboarding](story-c7850ba4-discovery-secure-onboarding.md)

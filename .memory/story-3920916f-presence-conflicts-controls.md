@@ -26,11 +26,15 @@ As a collaborator, I want to see who is connected, resolve conflicts confidently
 Async-first workflow needs explicit controls and visibility to build trust, especially when connections are intermittent.
 
 ## Out of Scope
-- Live cursor sharing/highlighting (stretch goal).
+- Live cursor sharing/highlighting (stretch goal tracked in `story-420b4311-live-editing-stretch.md`).
 - Telemetry/analytics (future consideration).
 
 ## Tasks
-- TBD (to be added via task breakdown).
+- Pending breakdown task: [Break down MVP stories into tasks](task-95882e57-breakdown-mvp-stories.md).
 
 ## Notes
 - Ensure conflict UI integrates with CRDT merge results and provides user-overridable resolutions when necessary.
+
+## Links
+- Epic: [P2P Obsidian Vault Collaboration](epic-fc65689b-p2p-obsidian-collab.md)
+- Related stories: [Async selective sync](story-193cacc9-async-selective-sync.md), [Peer discovery & secure onboarding](story-c7850ba4-discovery-secure-onboarding.md), [Stretch live co-editing](story-420b4311-live-editing-stretch.md)

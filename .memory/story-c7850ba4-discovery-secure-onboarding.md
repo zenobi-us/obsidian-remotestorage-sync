@@ -31,7 +31,11 @@ Discovery and trust are prerequisites for any data sync. This story ensures conn
 - Mobile platform support.
 
 ## Tasks
-- TBD (to be added via task breakdown).
+- Pending breakdown task: [Break down MVP stories into tasks](task-95882e57-breakdown-mvp-stories.md).
 
 ## Notes
 - Keep logging local-only for debugging per scope decisions.
+
+## Links
+- Epic: [P2P Obsidian Vault Collaboration](epic-fc65689b-p2p-obsidian-collab.md)
+- Related stories: [Async selective sync](story-193cacc9-async-selective-sync.md), [Presence & conflict UI](story-3920916f-presence-conflicts-controls.md)

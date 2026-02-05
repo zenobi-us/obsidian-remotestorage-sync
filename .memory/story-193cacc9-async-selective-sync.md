@@ -26,11 +26,16 @@ As a vault owner, I want to choose which folders/files to sync asynchronously so
 MVP is async-first (live editing is a stretch). Scope is limited to selected content to reduce complexity and performance risk.
 
 ## Out of Scope
-- Live collaborative cursors/highlights (stretch goal in separate story).
+- Live collaborative cursors/highlights (stretch goal in separate story `story-420b4311-live-editing-stretch.md`).
 - Remote relay/turn services (future phase if needed).
 
 ## Tasks
-- TBD (to be added via task breakdown).
+- Pending breakdown task: [Break down MVP stories into tasks](task-95882e57-breakdown-mvp-stories.md).
 
 ## Notes
-- Uses Yjs as the primary CRDT (per research `research-a7b3c9d2`), with Loro as a fallback option if required.
+- Uses Yjs as the primary CRDT (per research [P2P Browser Sync Libraries](research-a7b3c9d2-p2p-browser-sync-libraries.md)), with Loro as a fallback option if required ([Loro CRDT](research-f2e8b1a4-loro-crdt-library.md)).
+
+## Links
+- Epic: [P2P Obsidian Vault Collaboration](epic-fc65689b-p2p-obsidian-collab.md)
+- Related research: [P2P Browser Sync Libraries](research-a7b3c9d2-p2p-browser-sync-libraries.md), [Loro CRDT Library](research-f2e8b1a4-loro-crdt-library.md)
+- Stretch live editing story: [Live co-editing](story-420b4311-live-editing-stretch.md)
