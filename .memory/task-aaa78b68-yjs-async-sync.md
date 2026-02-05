@@ -2,8 +2,8 @@
 id: aaa78b68
 title: Implement Yjs async sync for notes and attachments
 created_at: 2026-02-05T21:15:00+10:30
-updated_at: 2026-02-05T21:15:00+10:30
-status: todo
+updated_at: 2026-02-05T23:35:32+10:30
+status: in-progress
 epic_id: fc65689b
 phase_id: none
 story_id: 193cacc9
