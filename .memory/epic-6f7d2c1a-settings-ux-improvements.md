@@ -2,7 +2,7 @@
 id: 6f7d2c1a
 title: Settings UX Improvements
 created_at: 2026-02-05T23:34:11+10:30
-updated_at: 2026-02-05T23:34:11+10:30
+updated_at: 2026-02-06T00:20:00+10:30
 status: proposed
 ---
 
@@ -21,6 +21,10 @@ status: proposed
 - Phase 1: Inventory existing settings and UX pain points.
 - Phase 2: Re-organize settings with improved copy and grouping.
 - Phase 3: Add guidance, affordances, and validation for critical settings.
+
+## Stories
+- [Included paths use multiselect link/note selector](story-4f2a9c71-included-paths-multiselect-selector.md)
+- [Right-click add filepath to shared channel](story-9e3a7f2b-right-click-share-filepath.md)
 
 ## Dependencies
 - Blocked by current epic: P2P Obsidian Vault Collaboration (`epic-fc65689b`).

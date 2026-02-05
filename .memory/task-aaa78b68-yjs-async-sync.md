@@ -2,7 +2,7 @@
 id: aaa78b68
 title: Implement Yjs async sync for notes and attachments
 created_at: 2026-02-05T21:15:00+10:30
-updated_at: 2026-02-05T23:38:21+10:30
+updated_at: 2026-02-06T09:05:00+10:30
 status: completed
 epic_id: fc65689b
 phase_id: none
@@ -28,7 +28,7 @@ Wire Yjs (with y-webrtc) to sync selected notes and attachments as separate CRDT
 Selected notes and attachments sync asynchronously via Yjs with conflict-free merges; excluded content is never transmitted.
 
 ## Actual Outcome
-Implemented Yjs sync engine with per-path docs, scope enforcement, WebRTC + IndexedDB hooks, vault adapter for read/write, and tests for merge and adapter updates.
+Completed end-to-end runtime wiring between Obsidian vault events and the Yjs sync engine. The plugin now auto-enrolls scoped notes and attachments on create/modify events, applies local file changes into Yjs docs, suppresses remote-write echo loops, and keeps scope filtering enforced at runtime. Added focused runtime lifecycle tests plus updated sync-engine tests; full test suite passes.
 
 ## Lessons Learned
-TBD.
+Remote-to-local write suppression is required to avoid vault modify echo loops when applying incoming CRDT updates.

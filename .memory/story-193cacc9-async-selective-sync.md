@@ -2,8 +2,8 @@
 id: 193cacc9
 title: Async selective sync for vault folders and attachments
 created_at: 2026-02-05T20:34:35+10:30
-updated_at: 2026-02-05T20:34:35+10:30
-status: todo
+updated_at: 2026-02-06T09:05:00+10:30
+status: in-progress
 epic_id: fc65689b
 phase_id: none
 priority: high
@@ -16,11 +16,11 @@ story_points: 8
 As a vault owner, I want to choose which folders/files to sync asynchronously so that my team can collaborate on relevant content (including attachments) without exposing the whole vault.
 
 ## Acceptance Criteria
-- [ ] User can select/include/exclude specific folders/files for sync; selection persists across restarts.
-- [ ] Notes sync via CRDT with conflict-free merges when peers reconnect after offline edits.
-- [ ] Attachments/binaries sync as separate CRDT objects with metadata references; attachment updates propagate correctly.
+- [x] User can select/include/exclude specific folders/files for sync; selection persists across restarts.
+- [x] Notes sync via CRDT with conflict-free merges when peers reconnect after offline edits.
+- [x] Attachments/binaries sync as separate CRDT objects with metadata references; attachment updates propagate correctly.
 - [ ] Initial async sync of up to 100 notes / 50MB completes in under 30 seconds on LAN/STUN conditions.
-- [ ] Excluded folders/files are never transmitted to peers and are clearly indicated in settings.
+- [x] Excluded folders/files are never transmitted to peers and are clearly indicated in settings.
 
 ## Context
 MVP is async-first (live editing is a stretch). Scope is limited to selected content to reduce complexity and performance risk.
@@ -31,7 +31,7 @@ MVP is async-first (live editing is a stretch). Scope is limited to selected con
 
 ## Tasks
 - [Implement selective vault scope configuration](task-86b9fc95-selective-scope-config.md)
-- [Implement Yjs async sync for notes and attachments](task-aaa78b68-yjs-async-sync.md)
+- [x] [Implement Yjs async sync for notes and attachments](task-aaa78b68-yjs-async-sync.md)
 - [Validate async sync performance targets](task-fea2a6e7-validate-sync-performance.md)
 
 ## Notes

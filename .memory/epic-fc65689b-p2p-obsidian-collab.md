@@ -2,8 +2,8 @@
 id: fc65689b
 title: P2P Obsidian Vault Collaboration
 created_at: 2026-02-05T20:34:35+10:30
-updated_at: 2026-02-05T20:34:35+10:30
-status: planning
+updated_at: 2026-02-06T08:52:00+10:30
+status: in-progress
 ---
 
 # P2P Obsidian Vault Collaboration
@@ -39,3 +39,8 @@ status: planning
 - Platforms: Desktop focus; mixed OS/WSL supported; mobile not prioritized for MVP.
 - Performance & reliability: Initial sync <30s for 100 notes/50MB; automatic retry on reconnection; clear error messages.
 - Compliance/hosting: No required external services/ports for baseline; must function in air-gapped/WSL scenarios if WebRTC is available.
+
+## Execution Reality Check (2026-02-06)
+- Phase 1 is underway: scoped settings (include/exclude) are implemented and covered by tests.
+- Yjs sync foundations exist (doc model, adapter hooks, WebRTC + IndexedDB integration points), but end-to-end vault event wiring and benchmark validation are still pending.
+- Phases 2–3 (discovery/security and UX surfaces) are not yet implemented in `src/`.
