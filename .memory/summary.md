@@ -14,4 +14,4 @@
 
 ## Available Research
 - **P2P Browser Sync Libraries** (`research-a7b3c9d2`): Comprehensive comparison of Yjs, RxDB, Gun.js, Automerge, and Trystero for browser-based P2P sync with WebRTC and CRDTs. **Recommendation: Yjs + y-webrtc** for Obsidian plugin due to best performance, smallest bundle (20KB), built-in encryption, and zero-config public signaling.
-- **Loro CRDT Library Deep Dive** (`research-f2e8b1a4`): In-depth analysis of Loro - Rust/WASM CRDT with advanced features (rich text, movable trees, version control, shallow snapshots). **Bundle: 399KB** (20x larger than Yjs). Network-agnostic (no built-in P2P). Best for apps needing advanced version control; Yjs still recommended for this plugin due to bundle size and built-in WebRTC.
+- **Loro CRDT Library Deep Dive** (`research-f2e8b1a4`) [archived, Yjs chosen]: In-depth analysis of Loro - Rust/WASM CRDT with advanced features (rich text, movable trees, version control, shallow snapshots). **Bundle: 399KB** (20x larger than Yjs). Network-agnostic (no built-in P2P). Kept for reference only.
