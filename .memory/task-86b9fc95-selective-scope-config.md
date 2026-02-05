@@ -2,8 +2,8 @@
 id: 86b9fc95
 title: Implement selective vault scope configuration
 created_at: 2026-02-05T21:15:00+10:30
-updated_at: 2026-02-05T23:07:49+10:30
-status: in-progress
+updated_at: 2026-02-05T23:09:51+10:30
+status: completed
 epic_id: fc65689b
 phase_id: none
 story_id: 193cacc9
@@ -28,7 +28,7 @@ Allow users to include/exclude specific folders/files for sync and persist the s
 Scoped selection is configurable, persisted, and enforced; excluded content never leaves the device.
 
 ## Actual Outcome
-Pending.
+Added settings for include/exclude path lists, UI for editing scope, path normalization helpers, and scope filtering tests.
 
 ## Lessons Learned
 TBD.
