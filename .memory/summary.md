@@ -7,6 +7,8 @@
 - **Future Epic (blocked)**: Settings UX Improvements (`epic-6f7d2c1a`) – ad hoc stories captured while completing the current epic
 
 ## Recent Updates
+- 2026-02-06: Added story for right-click add filepath to shared channel (`story-9e3a7f2b`)
+- 2026-02-06: Added story for included paths multiselect selector (`story-4f2a9c71`)
 - 2026-02-05: Implemented Yjs sync engine with scope enforcement and tests (`task-aaa78b68`)
 - 2026-02-05: Captured future epic for settings UX improvements (blocked; `epic-6f7d2c1a`)
 - 2026-02-05: Completed selective scope configuration settings/UI/tests (`task-86b9fc95`)
