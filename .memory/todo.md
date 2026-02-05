@@ -1,7 +1,7 @@
 # TODO
 
 - [x] [Implement selective vault scope configuration](task-86b9fc95-selective-scope-config.md) (story: 193cacc9)
-- [ ] [Implement Yjs async sync for notes and attachments](task-aaa78b68-yjs-async-sync.md) (story: 193cacc9)
+- [x] [Implement Yjs async sync for notes and attachments](task-aaa78b68-yjs-async-sync.md) (story: 193cacc9)
 - [ ] [Validate async sync performance targets](task-fea2a6e7-validate-sync-performance.md) (story: 193cacc9)
 - [ ] [Implement mDNS + STUN discovery and handshake](task-6fb8a3af-discovery-handshake.md) (story: c7850ba4)
 - [ ] [Implement QR/passphrase key exchange and session auth](task-0fec4274-key-exchange.md) (story: c7850ba4)

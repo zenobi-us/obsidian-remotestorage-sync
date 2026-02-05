@@ -2,8 +2,8 @@
 id: aaa78b68
 title: Implement Yjs async sync for notes and attachments
 created_at: 2026-02-05T21:15:00+10:30
-updated_at: 2026-02-05T23:35:32+10:30
-status: in-progress
+updated_at: 2026-02-05T23:38:21+10:30
+status: completed
 epic_id: fc65689b
 phase_id: none
 story_id: 193cacc9
@@ -28,7 +28,7 @@ Wire Yjs (with y-webrtc) to sync selected notes and attachments as separate CRDT
 Selected notes and attachments sync asynchronously via Yjs with conflict-free merges; excluded content is never transmitted.
 
 ## Actual Outcome
-Pending.
+Implemented Yjs sync engine with per-path docs, scope enforcement, WebRTC + IndexedDB hooks, vault adapter for read/write, and tests for merge and adapter updates.
 
 ## Lessons Learned
 TBD.
