@@ -1,11 +1,11 @@
 {
-  "id": "{pluginId}",
-  "name": "{pluginName}",
+  "id": "obsidian-remotestorage-sync",
+  "name": "Remote Storage Sync",
   "version": "0.0.1",
   "minAppVersion": "1.10.3",
-  "description": "{description}",
-  "author": "{author}",
-  "authorUrl": "https://github.com/{author}",
-  "fundingUrl": "https://github.com/sponsors/{author}",
+  "description": "Sync your Obsidian vault with remote storage services",
+  "author": "Zenobius",
+  "authorUrl": "https://github.com/Zenobius",
+  "fundingUrl": "https://github.com/sponsors/Zenobius",
   "isDesktopOnly": false
 }

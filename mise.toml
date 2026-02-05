@@ -1,5 +1,5 @@
 [tools]
-node = "18"
+node = "lts"
 pnpm = "latest"
 shellcheck = "latest"
 "ubi:dimo414/bkt" = "0.8.2"

@@ -37,3 +37,10 @@ coverage
 
 # Git Worktrees
 *.worktrees/
+
+
+# memory files
+in-memoria*
+in-memoria.*
+
+!.memory/

@@ -1,11 +1,13 @@
-# Obsidian Plugin Template
+# Remote Storage Sync
 
-{description}
+Sync your Obsidian vault with remote storage services like Nextcloud, S3, or other WebDAV-compatible providers.
 
 
 ## Features
 
-- **feature** - description
+- **Remote storage integration** - Seamlessly sync your vault with cloud storage providers
+- **Selective sync** - Choose which folders to sync
+- **Conflict resolution** - Intelligent handling of conflicting changes
 
 ## Installation
 
@@ -13,13 +15,13 @@ For now, use BRATS to install the plugin:
 
 1. Go to **Settings** → **Community plugins** → **BRAT**
 2. Find and click **Add beta plugin**
-3. Paste the plugin repo URL: `{repoUrl}`
+3. Paste the plugin repo URL: `https://github.com/Zenobius/obsidian-remotestorage-sync`
 4. Click **Add plugin**
 
 ### Enable the Plugin
 
 1. Go to **Settings** → **Community plugins** → **Installed plugins**
-2. Search for **{pluginName}** and enable it
+2. Search for **Remote Storage Sync** and enable it
 3. Configuration occurs in the Base view
 
 

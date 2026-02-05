@@ -1,11 +1,11 @@
 {
-  "name": "{pluginId}",
+  "name": "obsidian-remotestorage-sync",
   "version": "0.0.1",
-  "description": "{description}",
+  "description": "Sync your Obsidian vault with remote storage services",
   "main": "main.js",
   "types": "main.d.ts",
-  "keywords": [],
-  "author": "",
+  "keywords": ["obsidian", "sync", "remote-storage"],
+  "author": "Zenobius",
   "license": "MIT",
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",
