@@ -3,7 +3,7 @@ id: 4bd7399a
 title: Clarify scope for P2P Obsidian collaboration epic
 created_at: 2026-02-05T20:34:35+10:30
 updated_at: 2026-02-05T20:34:35+10:30
-status: in-progress
+status: completed
 epic_id: fc65689b
 phase_id: none
 story_id: null
@@ -29,7 +29,7 @@ None yet (story definition pending user scope).
 A scoped epic with documented assumptions, success criteria, and initial phase plan based on user-confirmed requirements.
 
 ## Actual Outcome
-Pending user responses.
+User confirmed scope: async-first sync with CRDT merges, selected folders/files, attachments as separate CRDT objects, mDNS + WebRTC STUN connectivity, E2E encryption with QR/passphrase exchange and peer approval, presence + conflict diff UI, manual sync control, <30s initial sync for 100 notes/50MB, LAN/air-gapped compatibility.
 
 ## Lessons Learned
-TBD.
+Front-loading scope questions clarified UX (manual sync, conflict diff), connectivity (mDNS + STUN), and performance targets before story writing.

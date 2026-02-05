@@ -3,39 +3,39 @@ id: fc65689b
 title: P2P Obsidian Vault Collaboration
 created_at: 2026-02-05T20:34:35+10:30
 updated_at: 2026-02-05T20:34:35+10:30
-status: proposed
+status: planning
 ---
 
 # P2P Obsidian Vault Collaboration
 
 ## Vision/Goal
-- Deliver an Obsidian plugin that enables realtime and offline-friendly peer-to-peer collaboration on vaults with minimal setup, secure-by-default encryption, and resilient conflict-free editing (CRDT-based).
+- Deliver an Obsidian plugin that enables offline-friendly, peer-to-peer collaboration on selected vault content with secure-by-default encryption and resilient conflict-free editing (CRDT-based).
 
 ## Success Criteria
-- Zero central server requirement; peers discover/connect via WebRTC or user-provided relay with fallbacks.
-- End-to-end encryption of vault data in transit; key exchange workflow defined and testable.
-- Conflict-free merges for notes and attachments; offline edits sync correctly on reconnection.
-- Usable on desktop (Win/macOS/Linux) with clear error handling and acceptable bundle size for Obsidian.
-- Setup path documented and testable in a small team scenario (≥3 peers) with measurable latency/throughput goals after scoping.
+- Zero central server requirement; peers discover/connect via local mDNS and WebRTC (public STUN for NAT), with no mandatory external relay.
+- End-to-end encryption with user-friendly key exchange (QR/passphrase) and peer approval before data sync.
+- Conflict-free merges for notes and attachments; offline edits reconcile on reconnection with clear conflict UI.
+- Initial async sync of up to 100 notes / 50MB completes in <30s on LAN/STUN; retries and error messages are clear when peers drop.
+- Usable on desktop (Win/macOS/Linux; WSL-compatible) with acceptable bundle size and manual “Sync Now” control for large/slow cases.
 
 ## Phases
-- Phase 1: Scope confirmation & protocol decisions (pending user input)
-- Phase 2: P2P sync core prototype (CRDT + signaling + storage integration)
-- Phase 3: Obsidian integration & UX (vault selection, permissions, conflict surfacing)
-- Phase 4: Hardening, security review, and alpha distribution
-- Phase 5: Beta feedback & polish (analytics/logging boundaries TBD)
+- Phase 1: Async sync foundations for selected folders/files (CRDT + attachments as separate CRDT objects).
+- Phase 2: Discovery & security: mDNS + WebRTC STUN connectivity, E2E key exchange, peer approval gating.
+- Phase 3: UX surfaces: presence indicators, conflict resolution diff UI, manual sync controls, error messaging.
+- Phase 4: Performance & resilience hardening (retry/offline handling, telemetry boundaries, large vault behavior).
+- Phase 5 (stretch): Live co-editing experience (cursors/highlights) if time allows.
 
 ## Dependencies
-- Candidate CRDT libraries: Yjs (recommended per research `research-a7b3c9d2`), Loro (`research-f2e8b1a4` as alternative).
-- Obsidian API compatibility (v1.10.3+), Vite build chain, WebRTC signaling approach (public STUN/TURN?).
-- Key management approach (local keys vs user-provided secrets), potential relay infrastructure.
+- Candidate CRDT libraries: Yjs (recommended per research `research-a7b3c9d2`), Loro (`research-f2e8b1a4` alternative).
+- Obsidian API compatibility (v1.10.3+), Vite build chain, WebRTC signaling (public STUN; optional relay later).
+- Key management approach (QR/passphrase exchange), potential relay infrastructure for future phases.
 
-## Open Questions (needs user input)
-- Collaboration model: simultaneous live editing vs async sync; max peer count targeted for first release?
-- Data scope: entire vault vs selected folders/files; handling of binaries/attachments and large vaults.
-- Connectivity: allowed to rely on public STUN/TURN? Need offline LAN-only mode? Any constraints on using third-party relays?
-- Security: required encryption level, key distribution UX, access control (who can join/approve peers), audit/logging needs.
-- UX expectations: presence indicators, cursors/highlights, conflict UI, manual sync controls, hot reload behavior in vault.
-- Platform coverage: desktop only or mobile too? Support for mixed OS peers?
-- Performance/reliability targets: acceptable initial sync time for N notes / M MB? Fallback behavior when a peer goes offline.
-- Compliance/hosting: any prohibitions on external services or ports? Need to support air-gapped/WSL scenarios?
+## Scope Decisions (2026-02-05)
+- Collaboration: Async sync for MVP; live editing as stretch. Target small teams (3–5) initially.
+- Data scope: Selected folders/files only; attachments synced as separate CRDT objects with metadata references.
+- Connectivity: Local mDNS discovery + WebRTC with public STUN; relay optional later; LAN-only/offline should work.
+- Security: E2E encryption; user-friendly key exchange (QR/passphrase); peer approval workflow; logging limited to local client for debugging.
+- UX: Presence indicators; conflict resolution UI (git-diff style); manual “Sync Now” control; clear errors when peers drop.
+- Platforms: Desktop focus; mixed OS/WSL supported; mobile not prioritized for MVP.
+- Performance & reliability: Initial sync <30s for 100 notes/50MB; automatic retry on reconnection; clear error messages.
+- Compliance/hosting: No required external services/ports for baseline; must function in air-gapped/WSL scenarios if WebRTC is available.

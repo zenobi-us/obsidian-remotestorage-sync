@@ -1,11 +1,12 @@
 # Project Summary
 
 ## Current Status
-- **Current Epic**: P2P Obsidian Vault Collaboration (`epic-fc65689b`) – proposed; awaiting scope confirmation
-- **Active Phases**: None (phase planning will follow scope confirmation)
-- **Next Milestone**: Gather scope answers from user and finalize epic/phase plan
+- **Current Epic**: P2P Obsidian Vault Collaboration (`epic-fc65689b`) – planning; scope confirmed (async-first, selected folders, mDNS+WebRTC STUN, E2E + peer approval, presence/conflict UI, manual sync)
+- **Active Phases**: None (phase planning will follow MVP task breakdown)
+- **Next Milestone**: Break down MVP stories into tasks and sequence phases
 
 ## Recent Updates
+- 2026-02-05: Captured scope decisions, updated epic, completed scope-clarification task, and drafted MVP stories (`story-193cacc9`, `story-c7850ba4`, `story-3920916f`, `story-420b4311`)
 - 2026-02-05: Started epic `epic-fc65689b` and created scope clarification task (`task-4bd7399a`)
 - 2026-02-05: Cleanup - restored deleted research files
 - 2026-02-04: Expanded codemap using CodeMapper output
