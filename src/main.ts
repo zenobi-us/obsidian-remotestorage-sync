@@ -1,6 +1,8 @@
 import { App, Plugin, PluginSettingTab, Setting } from 'obsidian';
 import { DEFAULT_SETTINGS, type RemoteStorageSyncSettings } from './settings';
 import { isPathInScope, normalizeVaultPath } from './scope';
+import { VaultFileAdapter } from './vault-file-adapter';
+import { YjsSyncEngine } from './yjs-sync-engine';
 
 class RemoteStorageSyncSettingTab extends PluginSettingTab {
   private readonly plugin: RemoteStorageSyncPlugin;
@@ -50,10 +52,18 @@ class RemoteStorageSyncSettingTab extends PluginSettingTab {
 
 export default class RemoteStorageSyncPlugin extends Plugin {
   public settings: RemoteStorageSyncSettings = { ...DEFAULT_SETTINGS };
+  private syncEngine: YjsSyncEngine | null = null;
 
   public async onload(): Promise<void> {
     await this.loadSettings();
     this.addSettingTab(new RemoteStorageSyncSettingTab(this.app, this));
+    this.syncEngine = new YjsSyncEngine({
+      roomName: this.app.vault.getName(),
+      isPathAllowed: (path) => this.isPathAllowed(path),
+      fileAdapter: new VaultFileAdapter(this.app),
+      enableWebrtc: true,
+      enablePersistence: true,
+    });
   }
 
   public isPathAllowed(path: string): boolean {
@@ -70,5 +80,10 @@ export default class RemoteStorageSyncPlugin extends Plugin {
 
   public async saveSettings(): Promise<void> {
     await this.saveData(this.settings);
+  }
+
+  public onunload(): void {
+    this.syncEngine?.destroy();
+    this.syncEngine = null;
   }
 }
