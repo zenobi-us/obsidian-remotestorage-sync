@@ -19,7 +19,7 @@ As a vault owner, I want to choose which folders/files to sync asynchronously so
 - [x] User can select/include/exclude specific folders/files for sync; selection persists across restarts.
 - [x] Notes sync via CRDT with conflict-free merges when peers reconnect after offline edits.
 - [x] Attachments/binaries sync as separate CRDT objects with metadata references; attachment updates propagate correctly.
-- [ ] Initial async sync of up to 100 notes / 50MB completes in under 30 seconds on LAN/STUN conditions.
+- [ ] Initial async sync of up to 100 notes / 50MB completes in under 30 seconds on LAN/STUN conditions. *(Deferred to Phase 4 — requires real network stack from Phase 2; fake benchmark deleted in task `58dd34a0`.)*
 - [x] Excluded folders/files are never transmitted to peers and are clearly indicated in settings.
 
 ## Context
