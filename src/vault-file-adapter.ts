@@ -38,7 +38,8 @@ export class VaultFileAdapter implements SyncFileAdapter {
       return null;
     }
 
-    return this.app.vault.readBinary(file);
+    const content = await this.app.vault.readBinary(file);
+    return new Uint8Array(content);
   }
 
   public async writeBinary(path: string, data: Uint8Array): Promise<void> {

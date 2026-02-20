@@ -45,6 +45,31 @@ export const createNoteDoc = (path: string, content: string): Y.Doc => {
   return doc;
 };
 
+const createEmptyNoteDoc = (path: string): Y.Doc => {
+  const doc = new Y.Doc();
+  doc.getText(NOTE_TEXT_KEY);
+
+  const meta = doc.getMap<string>(META_KEY);
+  meta.set('path', normalizeVaultPath(path));
+  meta.set('type', 'note');
+
+  return doc;
+};
+
+const createEmptyAttachmentDoc = (path: string, mimeType?: string): Y.Doc => {
+  const doc = new Y.Doc();
+  const meta = doc.getMap<string>(META_KEY);
+  meta.set('path', normalizeVaultPath(path));
+  meta.set('type', 'attachment');
+
+  const attachment = doc.getMap<AttachmentMapValue>(ATTACHMENT_KEY);
+  if (mimeType) {
+    attachment.set('mimeType', mimeType);
+  }
+
+  return doc;
+};
+
 export const createAttachmentDoc = (
   path: string,
   data: Uint8Array,
@@ -119,10 +144,16 @@ export class YjsSyncEngine {
       return false;
     }
 
-    const doc = createNoteDoc(normalized, content);
+    const doc = createEmptyNoteDoc(normalized);
     this.docs.set(normalized, { doc });
     this.attachDoc(normalized, doc);
     await this.attachPersistence(normalized, doc);
+
+    // Only populate from file adapter if persistence didn't restore content
+    if (readNoteContent(doc).length === 0 && content.length > 0) {
+      doc.getText(NOTE_TEXT_KEY).insert(0, content);
+    }
+
     this.attachProvider(normalized, doc);
 
     return true;
@@ -144,10 +175,17 @@ export class YjsSyncEngine {
       return false;
     }
 
-    const doc = createAttachmentDoc(normalized, data, mimeType);
+    const doc = createEmptyAttachmentDoc(normalized, mimeType);
     this.docs.set(normalized, { doc });
     this.attachDoc(normalized, doc);
     await this.attachPersistence(normalized, doc);
+
+    // Only populate from file adapter if persistence didn't restore data
+    if (readAttachmentData(doc) === null) {
+      const attachment = doc.getMap<AttachmentMapValue>(ATTACHMENT_KEY);
+      attachment.set('data', data);
+    }
+
     this.attachProvider(normalized, doc);
 
     return true;

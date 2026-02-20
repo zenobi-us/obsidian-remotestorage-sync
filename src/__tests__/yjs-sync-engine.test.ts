@@ -54,7 +54,7 @@ describe('Yjs sync helpers', () => {
   it('replicates attachment data via updates', () => {
     const data = new Uint8Array([1, 2, 3]);
     const docA = createAttachmentDoc('Assets/icon.png', data, 'image/png');
-    const docB = createAttachmentDoc('Assets/icon.png', new Uint8Array());
+    const docB = new Y.Doc();
 
     Y.applyUpdate(docB, Y.encodeStateAsUpdate(docA));
 
@@ -97,8 +97,12 @@ describe('YjsSyncEngine', () => {
     const doc = engine.getDoc('Notes/remote.md');
     expect(doc).not.toBeNull();
 
-    const remoteDoc = createNoteDoc('Notes/remote.md', 'Remote');
+    const remoteDoc = new Y.Doc();
     if (doc) {
+      Y.applyUpdate(remoteDoc, Y.encodeStateAsUpdate(doc));
+      const remoteText = remoteDoc.getText('content');
+      remoteText.delete(0, remoteText.length);
+      remoteText.insert(0, 'Remote');
       Y.applyUpdate(doc, Y.encodeStateAsUpdate(remoteDoc));
     }
 
